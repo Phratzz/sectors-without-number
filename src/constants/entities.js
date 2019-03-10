@@ -47,6 +47,7 @@ const layer = {
   shortName: 'entity.layer',
   sidebar: 'layer',
   action: 'layer',
+  export: false,
 };
 
 const navigation = {
@@ -54,6 +55,7 @@ const navigation = {
   name: 'entity.navigation',
   shortName: 'entity.navigation',
   sidebar: 'navigation',
+  export: false,
 };
 
 const note = {
@@ -62,6 +64,7 @@ const note = {
   shortName: 'entity.note',
   sidebar: 'note',
   action: 'entity',
+  export: true,
 };
 
 const researchBase = {
@@ -69,6 +72,7 @@ const researchBase = {
   name: 'entity.researchBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [ResearchBaseOccupation, ResearchBaseSituation],
   children: [note.key],
@@ -79,6 +83,7 @@ const refuelingStation = {
   name: 'entity.refuelingStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [RefuelingStationOccupation, RefuelingStationSituation],
   children: [note.key],
@@ -89,6 +94,7 @@ const moonBase = {
   name: 'entity.moonBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [MoonBaseOccupation, MoonBaseSituation],
   children: [note.key],
@@ -99,6 +105,7 @@ const orbitalRuin = {
   name: 'entity.orbitalRuin',
   shortName: 'entity.ruin',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [OrbitalRuinOccupation, OrbitalRuinSituation],
   children: [note.key],
@@ -109,6 +116,7 @@ const gasGiantMine = {
   name: 'entity.gasGiantMine',
   shortName: 'entity.mine',
   action: 'entity',
+  export: true,
   nameGenerator: generateMineName,
   attributes: [GasGiantMineOccupation, GasGiantMineSituation],
   children: [note.key],
@@ -119,6 +127,7 @@ const spaceStation = {
   name: 'entity.spaceStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [SpaceStationOccupation, SpaceStationSituation],
   children: [note.key],
@@ -129,6 +138,7 @@ const asteroidBase = {
   name: 'entity.asteroidBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [AsteroidBaseOccupation, AsteroidBaseSituation],
   children: [note.key],
@@ -139,6 +149,7 @@ const moon = {
   name: 'entity.moon',
   shortName: 'entity.moon',
   action: 'entity',
+  export: true,
   nameGenerator: generateName,
   children: [
     moonBase.key,
@@ -154,6 +165,7 @@ const planet = {
   name: 'entity.planet',
   shortName: 'entity.planet',
   action: 'entity',
+  export: true,
   tags: WorldTags,
   nameGenerator: generateName,
   attributes: [Atmosphere, Temperature, Biosphere, Population, TechLevel],
@@ -173,6 +185,7 @@ const asteroidBelt = {
   name: 'entity.asteroidBelt',
   shortName: 'entity.belt',
   action: 'entity',
+  export: true,
   nameGenerator: generateAsteroidBeltName,
   attributes: [AsteroidBeltOccupation, AsteroidBeltSituation],
   children: [
@@ -189,6 +202,7 @@ const deepSpaceStation = {
   name: 'entity.deepSpaceStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [SpaceStationOccupation, SpaceStationSituation],
   children: [note.key],
@@ -199,6 +213,7 @@ const blackHole = {
   name: 'entity.blackHole',
   shortName: 'entity.blackHole',
   action: 'entity',
+  export: true,
   topLevel: true,
   nameGenerator: generateBlackHoleName,
   children: [
@@ -216,6 +231,7 @@ const system = {
   name: 'entity.system',
   shortName: 'entity.system',
   action: 'entity',
+  export: true,
   topLevel: true,
   nameGenerator: generateName,
   children: [
@@ -233,6 +249,7 @@ const sector = {
   name: 'entity.sector',
   shortName: 'entity.sector',
   action: 'entity',
+  export: true,
   nameGenerator: generateSectorName,
   children: [blackHole.key, note.key, system.key],
 };
@@ -245,6 +262,7 @@ const settings = {
   name: 'misc.settings',
   shortName: 'misc.settings',
   sidebar: 'settings',
+  export: false,
 };
 
 export default mapValues(

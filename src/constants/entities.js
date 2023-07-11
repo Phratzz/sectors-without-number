@@ -61,6 +61,7 @@ const layer = {
   sidebar: 'layer',
   action: 'layer',
   extraneous: true,
+  export: false,
 };
 
 const navigation = {
@@ -69,6 +70,7 @@ const navigation = {
   shortName: 'entity.navigation',
   sidebar: 'navigation',
   extraneous: true,
+  export: false,
 };
 
 const note = {
@@ -78,6 +80,7 @@ const note = {
   sidebar: 'note',
   action: 'entity',
   extraneous: true,
+  export: true,
 };
 
 const settings = {
@@ -86,6 +89,7 @@ const settings = {
   shortName: 'misc.settings',
   sidebar: 'settings',
   extraneous: true,
+  export: false,
 };
 // **********************************
 
@@ -94,6 +98,7 @@ const researchBase = {
   name: 'entity.researchBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [ResearchBaseOccupation, ResearchBaseSituation],
   children: [note.key],
@@ -104,6 +109,7 @@ const refuelingStation = {
   name: 'entity.refuelingStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [RefuelingStationOccupation, RefuelingStationSituation],
   children: [note.key],
@@ -114,6 +120,7 @@ const moonBase = {
   name: 'entity.moonBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [MoonBaseOccupation, MoonBaseSituation],
   children: [note.key],
@@ -124,6 +131,7 @@ const orbitalRuin = {
   name: 'entity.orbitalRuin',
   shortName: 'entity.ruin',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [OrbitalRuinOccupation, OrbitalRuinSituation],
   children: [note.key],
@@ -134,6 +142,7 @@ const gasGiantMine = {
   name: 'entity.gasGiantMine',
   shortName: 'entity.mine',
   action: 'entity',
+  export: true,
   nameGenerator: generateMineName,
   attributes: [GasGiantMineOccupation, GasGiantMineSituation],
   children: [note.key],
@@ -144,6 +153,7 @@ const spaceStation = {
   name: 'entity.spaceStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [SpaceStationOccupation, SpaceStationSituation],
   children: [note.key],
@@ -154,6 +164,7 @@ const asteroidBase = {
   name: 'entity.asteroidBase',
   shortName: 'entity.base',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [AsteroidBaseOccupation, AsteroidBaseSituation],
   children: [note.key],
@@ -164,6 +175,7 @@ const moon = {
   name: 'entity.moon',
   shortName: 'entity.moon',
   action: 'entity',
+  export: true,
   nameGenerator: generateName,
   attributes: [emptyOccupation, emptySituation],
   children: [
@@ -180,6 +192,7 @@ const planet = {
   name: 'entity.planet',
   shortName: 'entity.planet',
   action: 'entity',
+  export: true,
   tags: WorldTags,
   nameGenerator: generateName,
   attributes: [Atmosphere, Temperature, Biosphere, Population, TechLevel],
@@ -199,6 +212,7 @@ const asteroidBelt = {
   name: 'entity.asteroidBelt',
   shortName: 'entity.belt',
   action: 'entity',
+  export: true,
   nameGenerator: generateAsteroidBeltName,
   attributes: [AsteroidBeltOccupation, AsteroidBeltSituation],
   children: [
@@ -215,6 +229,7 @@ const deepSpaceStation = {
   name: 'entity.deepSpaceStation',
   shortName: 'entity.station',
   action: 'entity',
+  export: true,
   nameGenerator: generateStationName,
   attributes: [SpaceStationOccupation, SpaceStationSituation],
   children: [note.key],
@@ -225,6 +240,7 @@ const blackHole = {
   name: 'entity.blackHole',
   shortName: 'entity.blackHole',
   action: 'entity',
+  export: true,
   topLevel: true,
   nameGenerator: generateBlackHoleName,
   attributes: [emptyOccupation, emptySituation],
@@ -243,6 +259,7 @@ const system = {
   name: 'entity.system',
   shortName: 'entity.system',
   action: 'entity',
+  export: true,
   topLevel: true,
   nameGenerator: generateName,
   attributes: [emptyOccupation, emptySituation],
@@ -261,6 +278,7 @@ const sector = {
   name: 'entity.sector',
   shortName: 'entity.sector',
   action: 'entity',
+  export: true,
   nameGenerator: generateSectorName,
   children: [blackHole.key, note.key, system.key],
 };

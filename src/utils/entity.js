@@ -39,6 +39,7 @@ import {
   WarningToast,
 } from 'utils/toasts';
 import EntityGenerators from 'utils/entity-generators';
+import EntityImporters from 'utils/entity-importers';
 import { createId, coordinateKey, allSectorCoordinates } from 'utils/common';
 
 import Entities from 'constants/entities';
@@ -188,6 +189,46 @@ export const generateEntity = ({
         ...configuration,
         name: name || configuration.sectorName,
         ...parameters,
+      }),
+    },
+    ...pickBy(childrenEntities, size),
+  };
+};
+
+export const importEntity = ({ entityType, entityId, currentSector, data }) => {
+  const newId = createId();
+  const sector = entityType === Entities.sector.key ? newId : currentSector;
+
+  let childrenEntities = {};
+  const importChildren = (oldParent, newParent, parentEntity) =>
+    Entities[parentEntity].children.forEach(childEntity => {
+      const { children, keyMpping } = EntityImporters[childEntity].importAll({
+        data,
+        sector,
+        newParent,
+        oldParent,
+        parentEntity,
+      });
+
+      childrenEntities = {
+        ...childrenEntities,
+        [childEntity]: {
+          ...(childrenEntities[childEntity] || {}),
+          ...children,
+        },
+      };
+      keyMpping.forEach(({ oldKey, newKey }) =>
+        importChildren(oldKey, newKey, childEntity),
+      );
+    });
+
+  importChildren(entityId, newId, entityType);
+
+  return {
+    [entityType]: {
+      [newId]: EntityImporters[entityType].importOne({
+        data,
+        key: entityId,
       }),
     },
     ...pickBy(childrenEntities, size),

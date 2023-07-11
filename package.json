@@ -38,6 +38,8 @@
     "react": "^16.10.1",
     "react-color": "^2.17.3",
     "react-dom": "^16.10.1",
+    "jsonschema": "^1.2.4",
+    "node-sass": "^4.9.3",
     "react-fastclick": "^3.0.2",
     "react-feather": "^2.0.3",
     "react-hint": "^3.2.0",

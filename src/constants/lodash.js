@@ -39,6 +39,7 @@ import without from 'lodash/without';
 import clamp from 'lodash/clamp';
 import every from 'lodash/every';
 import throttle from 'lodash/throttle';
+import has from 'lodash/has';
 
 export {
   includes,
@@ -82,4 +83,5 @@ export {
   clamp,
   every,
   throttle,
+  has,
 };

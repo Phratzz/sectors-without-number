@@ -79,3 +79,6 @@ export const settingsShowCoordinates = state => state.settings.showCoordinates;
 /* Tag */
 export const customTagSelector = state => state.tag.models;
 export const isCustomTagModalOpenSelector = state => state.tag.isOpen;
+/* Import */
+export const importJsonSelector = state => state.sector.import.json;
+export const importSelectedSectorSelector = state => state.sector.import.sector;

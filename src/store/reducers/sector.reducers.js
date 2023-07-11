@@ -2,6 +2,7 @@ import { LOCATION_CHANGE } from 'connected-react-router';
 
 import {
   UPDATED_CONFIGURATION,
+  UPDATED_IMPORT,
   ENTITY_HELD,
   RELEASE_HELD,
   ENTITY_HOVERED,
@@ -57,6 +58,10 @@ const initialState = {
     hideTags: true,
     columns: COLUMNS,
     rows: ROWS,
+  },
+  import: {
+    json: '',
+    sector: undefined,
   },
 };
 
@@ -121,6 +126,14 @@ export default function sector(state = initialState, action) {
         ...state,
         configuration: {
           ...state.configuration,
+          [action.key]: action.value,
+        },
+      };
+    case UPDATED_IMPORT:
+      return {
+        ...state,
+        import: {
+          ...state.import,
           [action.key]: action.value,
         },
       };

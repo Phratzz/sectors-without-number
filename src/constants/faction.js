@@ -10,6 +10,7 @@ export const FACTION_GOALS = {
   inside: 'inside',
   valor: 'valor',
   wealth: 'wealth',
+  relic: 'relic',
 };
 
 export const FACTION_TAGS = {

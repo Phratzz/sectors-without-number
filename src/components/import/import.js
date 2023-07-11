@@ -11,7 +11,7 @@ import LinkIcon from 'primitives/other/link-icon';
 import Button from 'primitives/other/button';
 import LabeledInput from 'primitives/form/labeled-input';
 
-import { Zap } from 'constants/icons';
+import { Zap } from 'react-feather';
 
 import './style.scss';
 
